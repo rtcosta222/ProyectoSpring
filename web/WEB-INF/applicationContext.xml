@@ -12,14 +12,31 @@
     <!--bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
           p:location="/WEB-INF/jdbc.properties" />
-
-<bean id="dataSource"
-    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-    p:driverClassName="${jdbc.driverClassName}"
-    p:url="${jdbc.url}"
-    p:username="${jdbc.username}"
-    p:password="${jdbc.password}" /-->
+/-->
+    <bean id="dataSourceOracle"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        p:driverClassName="oracle.jdbc.OracleDriver"
+        p:url="jdbc:oracle:thin:@localhost:1521:xe"
+        p:username="system"
+        p:password="oracle"/>
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
+    <bean id="car" class="models.Coche" 
+                   p:marca="Lamborghini"
+                   p:modelo="Diablo"
+                   p:velocidadMaxima="340">
+    </bean>
+
+    <bean id="kit" class="models.Coche" 
+                   p:marca="Corvette"
+                   p:modelo="Nero"
+                   p:velocidadMaxima="540">
+    </bean>
+
+    <bean id="driver" class="models.Conductor" 
+                      p:nombre="Miguelito">
+                      <constructor-arg ref="car"/>
+                      <property name="coche" ref="kit"/>
+    </bean>    
 </beans>
