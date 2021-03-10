@@ -19,6 +19,7 @@
             <li><a href="web06departamentos.htm">TablaDept</a></li>
             <li><a href="web07objectscontainer.htm">Objects Container</a></li>
             <li><a href="web08containerdepartamentos.htm">Container Depts.</a></li>
+            <li><a href="web09tenista.htm">Práctica: Tenistas</a></li>
         </ol>
     </body>
 </html>

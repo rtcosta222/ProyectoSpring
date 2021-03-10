@@ -9,14 +9,12 @@ package models;
  *
  * @author lscar
  */
-public class Conductor {
-    
+public class Tenista {
     private String nombre;
-    private Coche coche;
+    private String imagen;
+    private int palmares;
     
-    public Conductor(Coche car){
-        System.out.println("Coche " + car.getMarca());
-    }
+    public Tenista(){}
 
     public String getNombre() {
         return nombre;
@@ -26,11 +24,20 @@ public class Conductor {
         this.nombre = nombre;
     }
 
-    public Coche getCoche() {
-        return coche;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setCoche(Coche coche) {
-        this.coche = coche;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
+
+    public int getPalmares() {
+        return palmares;
+    }
+
+    public void setPalmares(int palmares) {
+        this.palmares = palmares;
+    }
+    
 }

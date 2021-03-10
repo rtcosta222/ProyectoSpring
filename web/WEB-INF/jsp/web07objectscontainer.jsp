@@ -16,17 +16,17 @@
     <body>
         <h1>Objects Container</h1>
         <h2 style="color:blue">
-            Marca: <c:out value="${CAR.marca}"/>
+            Marca: <c:out value="${CAR.marca}"/>, 
             Modelo: <c:out value="${CAR.modelo}"/>
         </h2>
-        <h2 style="red">
+        <h2 style="color:red">
             Vel. máxima: <c:out value="${CAR.velocidadMaxima}"/>
         </h2>
-        <h2 style="green"> Conductor: 
+        <h2 style="color:green">
             Conductor: <c:out value="${DRIVER.nombre}"/>
         </h2>
-        <h2 style="red">
-            Marca coche: <c:out value="${DRIVER.coche.marca}"/>
+        <h2 style="color:blueviolet">
+            Marca coche: <c:out value="${DRIVER.coche.marca}"/>, 
             Modelo coche: <c:out value="${DRIVER.coche.modelo}"/>
         </h2>
     </body>

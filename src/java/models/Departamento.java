@@ -14,14 +14,6 @@ public class Departamento {
     private int dnum;
     private String dnom;
     private String dloc;
-    
-    public int getDnum() {
-        return dnum;
-    }
-
-    public void setDnum(int dnum) {
-        this.dnum = dnum;
-    }
 
     public Departamento() {}
     
@@ -30,7 +22,15 @@ public class Departamento {
         this.dnom = dnom;
         this.dloc = dloc;
     }
+    
+    public int getDnum() {
+        return dnum;
+    }
 
+    public void setDnum(int dnum) {
+        this.dnum = dnum;
+    }
+    
     public String getDnom() {
         return dnom;
     }

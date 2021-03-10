@@ -27,9 +27,9 @@ public class Controller06Departamentos implements Controller{
     // Methods
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
-        ModelAndView mv = new ModelAndView("web06departamentos");
+        ModelAndView mav = new ModelAndView("web06departamentos");
         List<Departamento> departamentos = this.repo.getDepartamentos();
-        mv.addObject("DEPARTAMENTOS",departamentos);
-        return mv;
+        mav.addObject("DEPARTAMENTOS",departamentos);
+        return mav;
     }
 }

@@ -31,9 +31,12 @@ public class Controller08ContainerDepartamentos implements Controller{
         Object bean = container.getBean(id);
         return bean;
     }
-    // El método siguiente debe estar en un repositorio.
+    // El método siguiente debe estar en un repositorio en caso contrario.
     private Departamento buscarDepartamento(int id, ServletContext context) throws SQLException{
-        // Get connection
+        
+        // Get connection: El recurso consiste en poder acceder a los datos de 
+        //  la conexión a la BBDD sin pasar por el repositorio. La siguiente línea 
+        //  es equivalente a getConnection() en el repositorio.
         DriverManagerDataSource datasource = 
            (DriverManagerDataSource)this.getBean("dataSourceOracle", context);
         Connection cn = datasource.getConnection();

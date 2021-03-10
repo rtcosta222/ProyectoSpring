@@ -18,14 +18,14 @@
         <form method="post">
             <label>Id dept.</label>
             <input type="text" name="id" required/>
-            <button type="submit"> Buscar dept</button>
+            <button type="submit">Buscar dept</button>
         </form>
         <hr/>
         <c:if test="${DEPARTAMENTO != null}">
-            <hr/>
             <h1>
-                <c:out value="${DEPARTAMENTO.nombre}"/>,
-                <c:out value="${DEPARTAMENTO.localidad}"/>
+                <c:out value="${DEPARTAMENTO.dnum}"/> -
+                <c:out value="${DEPARTAMENTO.dnom}"/> -
+                <c:out value="${DEPARTAMENTO.dloc}"/>
             </h1>
         </c:if>
     </body>

@@ -20,6 +20,7 @@
     <bean class="controllers.Controller06Departamentos" id="controller06"/>    
     <bean class="controllers.Controller07ObjetosContainer" id="controller07"/>    
     <bean class="controllers.Controller08ContainerDepartamentos" id="controller08"/>    
+    <bean class="controllers.ControllerTenista" id="controller09"/>    
     
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -38,6 +39,7 @@
                 <prop key="web06departamentos.htm">controller06</prop>
                 <prop key="web07objectscontainer.htm">controller07</prop>
                 <prop key="web08containerdepartamentos.htm">controller08</prop>
+                <prop key="web09tenista.htm">controller09</prop>
             </props>
         </property>
     </bean>

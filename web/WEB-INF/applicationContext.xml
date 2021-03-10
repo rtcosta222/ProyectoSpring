@@ -16,7 +16,7 @@
     <bean id="dataSourceOracle"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         p:driverClassName="oracle.jdbc.OracleDriver"
-        p:url="jdbc:oracle:thin:@localhost:1521:xe"
+        p:url="jdbc:oracle:thin:@LOCALHOST:1521:XE"
         p:username="system"
         p:password="oracle"/>
 
@@ -34,9 +34,26 @@
                    p:velocidadMaxima="540">
     </bean>
 
+<!--    id          :   Identidad de bean usado como parámetro en getBean.
+        class       :   Clase a la que pertenece el bean como definida en models.
+        p:nombre    :   Valor del atributo "nombre" de la clase (en class).
+        <constructor-arg ref="car"> : Valores del atributo "coche" sacados del 
+                        objeto "car" pasados al constructor durante inicialización.
+        <property name, ref> : Nuevos valores del atributo "coche" sacados del 
+                        objeto "kit".
+         
+                    de la clase (en class).
+-->
     <bean id="driver" class="models.Conductor" 
                       p:nombre="Miguelito">
                       <constructor-arg ref="car"/>
                       <property name="coche" ref="kit"/>
-    </bean>    
+    </bean> 
+    <bean id="nadal" class="models.Tenista" 
+                       p:nombre="Rafa Nadal"
+                       p:palmares="19"
+                       p:imagen="https://tennishead.net/wp-content/uploads/2019/09/NADAL-USOPEN-2019-04092019-11589.jpg">
+<!--                      <constructor-arg ref="car"/>
+                      <property name="coche" ref="kit"/>  -->
+    </bean> 
 </beans>
