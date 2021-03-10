@@ -5,36 +5,37 @@
  */
 package controllers;
 
+import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.GrandSlam;
-import models.Tenista;
+import models.Hospital;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
+import repositories.RepositoryHospital;
 
 /**
  *
  * @author lscar
  */
-public class ControllerTenista implements Controller{
-    private Object getBean(String id, ServletContext servlet){
-        ApplicationContext container = 
-                WebApplicationContextUtils.getRequiredWebApplicationContext(servlet);
+public class Controller011Hospital implements Controller{
+
+    private Object getBean(String id, ServletContext context) {
+        ApplicationContext container = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
         Object bean = container.getBean(id);
         return bean;
     }
-    
+
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
-        ModelAndView mv = new ModelAndView("web09tenista");
-        Tenista tenista = (Tenista)this.getBean("tenista", hsr.getServletContext());
-        mv.addObject("TENISTA", tenista);
-        GrandSlam gs =(GrandSlam)this.getBean("gs", hsr.getServletContext());
-        mv.addObject("GRANDSLAM", gs);
-        return mv;        
-    }
-    
+
+        ModelAndView mv = new ModelAndView("web011hospitales");
+        RepositoryHospital repo = (RepositoryHospital) this.getBean("repositoryhospital", 
+                                                                    hsr.getServletContext());
+        List<Hospital> hospitales = repo.getHospitales();
+        mv.addObject("HOSPITALES", hospitales);
+        return mv;
+    }   
 }
