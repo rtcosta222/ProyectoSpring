@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import models.Departamento;
 import models.Hospital;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 

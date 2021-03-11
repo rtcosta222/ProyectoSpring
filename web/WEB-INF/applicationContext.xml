@@ -20,20 +20,6 @@
         p:username="system"
         p:password="oracle"/>
 
-    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-
-    <bean id="car" class="models.Coche" 
-                   p:marca="Lamborghini"
-                   p:modelo="Diablo"
-                   p:velocidadMaxima="340">
-    </bean>
-
-    <bean id="kit" class="models.Coche" 
-                   p:marca="Corvette"
-                   p:modelo="Nero"
-                   p:velocidadMaxima="540">
-    </bean>
-
 <!--    id          :   Identidad de bean usado como parámetro en getBean.
         class       :   Clase a la que pertenece el bean como definida en models.
         p:nombre    :   Valor del atributo "nombre" de la clase (en class).
@@ -49,6 +35,16 @@
                       <constructor-arg ref="car"/>
                       <property name="coche" ref="kit"/>
     </bean> 
+    <bean id="car" class="models.Coche" 
+                   p:marca="Lamborghini"
+                   p:modelo="Diablo"
+                   p:velocidadMaxima="340">
+    </bean>
+    <bean id="kit" class="models.Coche" 
+                   p:marca="Corvette"
+                   p:modelo="Nero"
+                   p:velocidadMaxima="540">
+    </bean>
     <bean id="tenista" class="models.Tenista" 
                        p:nombre="Rafa Nadal"
                        p:palmares="19"
@@ -62,5 +58,8 @@
     <bean id="repositoryhospital" class="repositories.RepositoryHospital">
         <constructor-arg ref="dataSourceOracle"/>
     </bean>
-
+    <bean id="repositoryplantilla" class="repositories.RepositoryPlantilla">
+        <constructor-arg ref="dataSourceOracle"/>
+        
+    </bean>
 </beans>

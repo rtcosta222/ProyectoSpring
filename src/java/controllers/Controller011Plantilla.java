@@ -9,36 +9,33 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.Hospital;
+import models.Plantilla;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
-import repositories.RepositoryHospital;
+import repositories.RepositoryPlantilla;
 
 /**
  *
  * @author lscar
  */
-public class Controller011Hospital implements Controller{
+public class Controller011Plantilla implements Controller{
 
     private Object getBean(String id, ServletContext context) {
         ApplicationContext container = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
         Object bean = container.getBean(id);
         return bean;
     }
-
+    
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
-        // Define la View de destino.
-        ModelAndView mv = new ModelAndView("web011hospitales");
-        // Obtenemos acceso a los métodos definidos en el objeto "repo" para acceder
-        // a la bbdd.
-        RepositoryHospital repo = (RepositoryHospital) this.getBean("repositoryhospital", 
+        ModelAndView mv = new ModelAndView("web011plantilla");
+        // Declaración y asignación del objeto repo.
+        RepositoryPlantilla repo = (RepositoryPlantilla)this.getBean("repositoryplantilla",
                                                                     hsr.getServletContext());
-        // Obtiene los datos y se lo senvia a la View. 
-        List<Hospital> hospitales = repo.getHospitales();
-        mv.addObject("HOSPITALES", hospitales);
+        List<Plantilla> plantilla = repo.getPlantilla();
+        mv.addObject("PLANTILLA", plantilla);
         return mv;
-    }   
+    }
 }
