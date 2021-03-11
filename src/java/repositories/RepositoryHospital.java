@@ -6,6 +6,7 @@
 package repositories;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -42,5 +43,14 @@ public class RepositoryHospital {
         z_rs.close();
         cn.close();
         return hospitales;
+    }
+    
+    public void eliminarHospital(int hcod) throws SQLException{
+        Connection cn = datasource.getConnection();
+        String sql = "delete from hospital where hospital_cod=?";
+        PreparedStatement pst = cn.prepareStatement(sql);
+        pst.setInt(1, hcod);
+        pst.executeUpdate();
+        cn.close();
     }
 }

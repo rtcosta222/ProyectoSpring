@@ -13,8 +13,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <form method="post">
+        <label> Intro hcod: </label>
+        <input type="text" name="cjhcod"/>
+        <button type="submit">Borrar hospital</button>
+    </form>
+    
+    <hr/>
     <body>
-        <h1>Hospitales</h1>
+        <h1>DI Hospitales</h1>
         <table>
             <thead>
                 <tr>

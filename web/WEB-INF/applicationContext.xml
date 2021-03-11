@@ -20,6 +20,13 @@
         p:username="system"
         p:password="oracle"/>
 
+    <bean id="dataSourceMySql"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        p:driverClassName="com.mysql.cj.jdbc.Driver"
+        p:url="jdbc:mysql://localhost:3306/hospital"
+        p:username="root"
+        p:password="mysql"/>
+        
 <!--    id          :   Identidad de bean usado como parámetro en getBean.
         class       :   Clase a la que pertenece el bean como definida en models.
         p:nombre    :   Valor del atributo "nombre" de la clase (en class).
@@ -58,8 +65,12 @@
     <bean id="repositoryhospital" class="repositories.RepositoryHospital">
         <constructor-arg ref="dataSourceOracle"/>
     </bean>
+<!--
+    <bean id="repositoryhospital" class="repositories.RepositoryHospital">
+        <constructor-arg ref="dataSourceMySql"/>
+    </bean>
+-->
     <bean id="repositoryplantilla" class="repositories.RepositoryPlantilla">
         <constructor-arg ref="dataSourceOracle"/>
-        
     </bean>
 </beans>

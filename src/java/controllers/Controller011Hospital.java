@@ -33,10 +33,16 @@ public class Controller011Hospital implements Controller{
         // Define la View de destino.
         ModelAndView mv = new ModelAndView("web011hospitales");
         // Obtenemos acceso a los métodos definidos en el objeto "repo" para acceder
-        // a la bbdd.
+        // a la bbdd. Lo ideal es declarar el repo como atributo de clase.
         RepositoryHospital repo = (RepositoryHospital) this.getBean("repositoryhospital", 
                                                                     hsr.getServletContext());
-        // Obtiene los datos y se lo senvia a la View. 
+        // Eliminar hospital por hcod.
+        String ui = hsr.getParameter("cjhcod");
+        if(ui != null){
+            int hcod = Integer.parseInt(ui);
+            repo.eliminarHospital(hcod);
+        }
+        // Obtiene los datos actualizados y se los envia a la View. 
         List<Hospital> hospitales = repo.getHospitales();
         mv.addObject("HOSPITALES", hospitales);
         return mv;
