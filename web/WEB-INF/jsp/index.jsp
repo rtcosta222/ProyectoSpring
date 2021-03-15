@@ -24,6 +24,10 @@
             <li><a href="web011hospitales.htm">Tabla Hospital</a></li>
             <li><a href="web011plantilla.htm">Tabla Plantilla</a></li>
             <li><a href="web13contadorsession.htm">Contador Session</a></li>
+            <li><a href="web131contadorsession.htm">Contador Session II</a></li>
+            <li><a href="web14almacenarsalarios.htm">Almacenar Salario - Session</a></li>
+            <li><a href="web141almacenarsalarios.htm">Almacenar Salario - Session II</a></li>
+            <li><a href="web15almacenarempleados.htm">Almacenar Empleados en Session</a></li>
         </ol>
     </body>
 </html>

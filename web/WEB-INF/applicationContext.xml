@@ -73,4 +73,8 @@
     <bean id="repositoryplantilla" class="repositories.RepositoryPlantilla">
         <constructor-arg ref="dataSourceOracle"/>
     </bean>
+
+    <bean id="repositoryempleado" class="repositories.RepositoryEmpleado">
+        <constructor-arg ref="dataSourceOracle"/>
+    </bean>
 </beans>

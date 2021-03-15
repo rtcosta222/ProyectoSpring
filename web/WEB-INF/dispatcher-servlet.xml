@@ -24,6 +24,11 @@
     <bean class="controllers.Controller011Hospital" id="controller011"/>    
     <bean class="controllers.Controller011Plantilla" id="controller0111"/>    
     <bean class="controllers.Controller13ContadorSession" id="controller013"/>    
+    <bean class="controllers.Controller14AlmacenarSalarios" id="controller014"/>    
+    <bean class="controllers.Controller131ContadorSession" id="controller0131"/>    
+    <bean class="controllers.Controller141AlmacenarSalarios" id="controller0141"/>    
+    <bean class="controllers.Controller15AlmacenarEmpleados" id="controller015"/>    
+    <bean class="controllers.Controller15MostrarEmpleados" id="controller0151"/>    
     
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -46,6 +51,13 @@
                 <prop key="web011hospitales.htm">controller011</prop>
                 <prop key="web011plantilla.htm">controller0111</prop>
                 <prop key="web13contadorsession.htm">controller013</prop>
+                <prop key="web14almacenarsalarios.htm">controller014</prop>
+                <prop key="web14mostrarsumasalarial.htm">mostrarSumaSalarialController</prop>
+                <prop key="web131contadorsession.htm">controller0131</prop>
+                <prop key="web141almacenarsalarios.htm">controller0141</prop>
+                <prop key="web141mostrarsumasalarial.htm">mostrarSumaSalarialControllerII</prop>
+                <prop key="web15almacenarempleados.htm">controller015</prop>
+                <prop key="web15mostrarempleados.htm">controller0151</prop>
             </props>
         </property>
     </bean>
@@ -54,12 +66,18 @@
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
-
     <!--
     The index controller.
     -->
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
-
+    
+    <bean name="mostrarSumaSalarialController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="web14mostrarsumasalarial"/>
+    
+    <bean name="mostrarSumaSalarialControllerII"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="web141mostrarsumasalarial"/>
 </beans>

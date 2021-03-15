@@ -14,18 +14,14 @@ import org.springframework.web.servlet.mvc.Controller;
  *
  * @author lscar
  */
-public class Controller13ContadorSession implements Controller{
+public class Controller131ContadorSession implements Controller{
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
-        ModelAndView mv = new ModelAndView("web13contadorsession"); 
-        String ui = hsr.getParameter("incremento");
+        ModelAndView mv = new ModelAndView("web131contadorsession");
+        String ui = hsr.getParameter("incr");
         if(ui != null){
             int contador = 1;
-            // El contador tendrá valor uno pero solo la primera vez. Luego tendrá el valor 
-            // que hayamos almacenado en Session. Necesitaremos saber si el contador está
-            // en session. Si sí, recuperamos el objeto de session, lo incrementamos y lo
-            // volvemos a almacenar. Si no,lo generamos y lo almacenamos.
             if(hsr.getSession().getAttribute("CONTADOR") != null){
                 contador = (int)hsr.getSession().getAttribute("CONTADOR");
             }
@@ -35,5 +31,4 @@ public class Controller13ContadorSession implements Controller{
         }
         return mv;
     }
-    
 }
