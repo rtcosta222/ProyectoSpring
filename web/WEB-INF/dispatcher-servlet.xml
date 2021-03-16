@@ -29,7 +29,27 @@
     <bean class="controllers.Controller141AlmacenarSalarios" id="controller0141"/>    
     <bean class="controllers.Controller15AlmacenarEmpleados" id="controller015"/>    
     <bean class="controllers.Controller15MostrarEmpleados" id="controller0151"/>    
-    
+    <bean class="controllers.Controller16MultiAction" id="controller016">
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+                <property name="paramName" value="accion"/>
+            </bean>
+        </property>        
+    </bean>
+    <bean class="controllers.Controller17MultiAccionesMates" id="controller17">
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+                <property name="paramName" value="action"/>
+            </bean>
+        </property>        
+    </bean>
+    <bean class="controllers.Controller171MultiAccionesMates" id="controller171">
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+                <property name="paramName" value="accion"/>
+            </bean>
+        </property>        
+    </bean>
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must
@@ -58,6 +78,9 @@
                 <prop key="web141mostrarsumasalarial.htm">mostrarSumaSalarialControllerII</prop>
                 <prop key="web15almacenarempleados.htm">controller015</prop>
                 <prop key="web15mostrarempleados.htm">controller0151</prop>
+                <prop key="web16multiaction.htm">controller016</prop>
+                <prop key="web17multiaccionesmates.htm">controller17</prop>
+                <prop key="web171multiaccionesmates.htm">controller171</prop>
             </props>
         </property>
     </bean>

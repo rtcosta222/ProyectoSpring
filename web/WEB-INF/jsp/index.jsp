@@ -28,6 +28,9 @@
             <li><a href="web14almacenarsalarios.htm">Almacenar Salario - Session</a></li>
             <li><a href="web141almacenarsalarios.htm">Almacenar Salario - Session II</a></li>
             <li><a href="web15almacenarempleados.htm">Almacenar Empleados en Session</a></li>
+            <li><a href="web16multiaction.htm?accion=inicio">MultiAction Controller</a></li>
+            <li><a href="web17multiaccionesmates.htm?action=iniciar">MultiActionesMates Controller</a></li>
+            <li><a href="web171multiaccionesmates.htm?accion=iniciar">MultiActionesMates ControllerII</a></li>
         </ol>
     </body>
 </html>

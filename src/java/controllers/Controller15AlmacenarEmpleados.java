@@ -36,7 +36,7 @@ public class Controller15AlmacenarEmpleados implements Controller{
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
         ModelAndView mv = new ModelAndView("web15almacenarempleados");
         
-        // Anadir empleadoa Session:
+        // Anadir empleado a Session:
         String idemp = hsr.getParameter("AnadirIdEmp");
         if(idemp != null) {
             ArrayList<String> idsinsession;
@@ -45,8 +45,15 @@ public class Controller15AlmacenarEmpleados implements Controller{
             } else{
                 idsinsession = new ArrayList<>();
             }
-            idsinsession.add(idemp);
-            hsr.getSession().setAttribute("listaids", idsinsession);
+            
+            if(idsinsession.contains(idemp)){
+                boolean iddup = true;
+                mv.addObject("IDDUPLICADA", iddup);
+            } else{
+                idsinsession.add(idemp);
+                hsr.getSession().setAttribute("listaids", idsinsession);
+            }
+            
             int almacenados;
             almacenados = idsinsession.size();
             mv.addObject("NUMALMACENADOS", almacenados);

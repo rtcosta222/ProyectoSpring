@@ -19,6 +19,10 @@
         <c:if test="${NUMALMACENADOS != null}">       
             <h1 style="color: blue">Empleados en Session: <c:out value="${NUMALMACENADOS}"/></h1>
         </c:if>
+        <c:if test="${IDDUPLICADA != null}">       
+            <h2 style="color: red">Empleado ya está en Session</h2>
+        </c:if>
+
         <table>
             <thead>
                 <tr>
@@ -36,7 +40,16 @@
                         <td><c:out value="${emp.apellido}"/></td>
                         <td><c:out value="${emp.oficio}"/></td>
                         <td><c:out value="${emp.salario}"/></td>
-                        <td><a href="web15almacenarempleados.htm?AnadirIdEmp=${emp.id}">Anadir</a></td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${sessionScope.listaids.contains(emp.id.toString())}">
+                                    <img src="images/check-clipart.jpg" width="20px" height="20px"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="web15almacenarempleados.htm?AnadirIdEmp=${emp.id}">Anadir</a>                            
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>

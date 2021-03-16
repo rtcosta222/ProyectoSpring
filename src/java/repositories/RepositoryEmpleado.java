@@ -45,7 +45,7 @@ public class RepositoryEmpleado {
     
     public List<Empleado> getEmpleadosInSession(ArrayList<String> listaids) throws SQLException{
         Connection cn = datasource.getConnection();
-        
+        // Ajustando el interface de datos.
         String datos = "";
         for(String s: listaids){
             datos += s + ","; 
