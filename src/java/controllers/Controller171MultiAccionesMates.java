@@ -8,6 +8,8 @@ package controllers;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
@@ -16,11 +18,13 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
  * @author lscar
  */
 public class Controller171MultiAccionesMates extends MultiActionController{
+    
     public ModelAndView iniciar(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("web171multiaccionesmates");
         return mv;
     }
     
+    @RequestMapping(method = RequestMethod.POST)
     public ModelAndView tablamulti(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("web171multiaccionesmates");
         String ui = request.getParameter("cjnum");
@@ -32,7 +36,8 @@ public class Controller171MultiAccionesMates extends MultiActionController{
         mv.addObject("TABLAMULTI", tablamulti);
         return mv;
     }
-    
+
+    @RequestMapping(method = RequestMethod.POST)
     public ModelAndView pares(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("web171multiaccionesmates");
         String ui = request.getParameter("cjnum");

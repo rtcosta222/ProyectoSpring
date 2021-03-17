@@ -50,11 +50,20 @@
             </bean>
         </property>        
     </bean>
+    <bean class="controllers.Controller19MultiHospitalDoctores" id="controller19">
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+                <property name="paramName" value="option"/>
+            </bean>
+        </property>        
+    </bean>
+    
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must
     define an explicit mapping for it.
     -->
+    
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
@@ -81,6 +90,7 @@
                 <prop key="web16multiaction.htm">controller016</prop>
                 <prop key="web17multiaccionesmates.htm">controller17</prop>
                 <prop key="web171multiaccionesmates.htm">controller171</prop>
+                <prop key="web19multihospitaldoctores.htm">controller19</prop>
             </props>
         </property>
     </bean>

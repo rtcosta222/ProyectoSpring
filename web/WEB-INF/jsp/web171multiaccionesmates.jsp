@@ -15,8 +15,8 @@
     </head>
     <body>
         <h1>Ejemplo de Multi Acciones</h1>
-        <h1 style="color: red">Variante 02: Dos acciones resueltas en métodos distintos.</h1>
-        <form method="post" action="web171multiaccionesmates.htm">
+        <h2 style="color: blue">Variante 02: Dos acciones resueltas en métodos distintos.</h2>
+        <form method="get" action="web171multiaccionesmates.htm">
             <label>Intro número</label>
             <input type="text" name="cjnum"/>
             <button type="submit" name="accion" value="tablamulti">Tabla multi</button>

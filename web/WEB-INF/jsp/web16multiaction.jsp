@@ -15,7 +15,7 @@
     </head>
     <body>
         <h1>MultiActions</h1>
-        <form method="get">
+        <form method="post" action="web16multiaction.htm">
             <input type="hidden" name="accion" value="operar"/>
             <label>Num 01:</label>
             <input type="text" name="num01" required/>

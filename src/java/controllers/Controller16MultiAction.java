@@ -7,6 +7,8 @@ package controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
@@ -20,6 +22,7 @@ public class Controller16MultiAction extends MultiActionController{
         return mv;
     }
 
+//    @RequestMapping(method = RequestMethod.POST)
     public ModelAndView operar(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("web16multiaction");
         int num01 = Integer.parseInt(request.getParameter("num01"));
